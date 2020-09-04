@@ -1,0 +1,253 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.18362}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9\par
+#CODE1:\par
+\par
+topDomainList=["edu","com","org","in"]\par
+urlList = ["{{\field{\*\fldinst{HYPERLINK www.annauniv.edu }}{\fldrslt{www.annauniv.edu\ul0\cf0}}}}\f0\fs22 ", "{{\field{\*\fldinst{HYPERLINK www.google.com }}{\fldrslt{www.google.com\ul0\cf0}}}}\f0\fs22 ", "{{\field{\*\fldinst{HYPERLINK www.ndtv.com }}{\fldrslt{www.ndtv.com\ul0\cf0}}}}\f0\fs22 ", "{{\field{\*\fldinst{HYPERLINK www.website.org }}{\fldrslt{www.website.org\ul0\cf0}}}}\f0\fs22 ", "{{\field{\*\fldinst{HYPERLINK www.bis.org.in }}{\fldrslt{www.bis.org.in\ul0\cf0}}}}\f0\fs22 ", "{{\field{\*\fldinst{HYPERLINK www.rbi.org.in }}{\fldrslt{www.rbi.org.in\ul0\cf0}}}}\f0\fs22 "]\par
+\par
+def sortDomainNames(domainList,urlList):\par
+\tab tempDomainList = domainList\par
+\tab tempUrlList = urlList\par
+\tab sortedUrlList = []\par
+\tab\par
+\tab for i,v in enumerate(tempDomainList):\par
+\tab\tab for i1,v1 in enumerate(tempUrlList):\par
+\tab\tab\tab if v1.endswith(v):\par
+\tab\tab\tab\tab sortedUrlList.append(v1)\par
+\par
+\tab print (sortedUrlList)\par
+\par
+\par
+sortDomainNames(topDomainList,urlList)\par
+#END\par
+\par
+\par
+#CODE2:\par
+\par
+list1=['axa', 'xyz', 'gg', 'x', 'yyy']\par
+list2=['x', 'cd', 'cnc', 'kk']\par
+list3=['bab', 'ce', 'cba', 'syanora']\par
+def specialStringCount(tlist):\par
+\tab sCount=0\par
+\tab for ele in tlist:\par
+\tab\tab if ( len(ele)>=2 ) and ( ele[0] == ele[-1] ):\par
+\tab\tab\tab sCount+=1\par
+\tab return sCount\par
+\par
+print specialStringCount(list1)\par
+print specialStringCount(list2)\par
+print specialStringCount(list3)\par
+\par
+#END\par
+\par
+#CODE3:\par
+\par
+def customSort(lst):\par
+\tab tmpList=lst\par
+\tab Xlst=[];nonXlst=[]\par
+\tab for ele in tmpList:\par
+\tab\tab if ele[0].lower() == "x" :\par
+\tab\tab\tab Xlst.append(ele)\par
+\tab\tab else:\par
+\tab\tab\tab nonXlst.append(ele)\par
+\tab Xlst.sort(),nonXlst.sort()\par
+\tab return Xlst + nonXlst\par
+\par
+\par
+#main program\par
+lst1=['mix', 'xyz', 'apple', 'xanadu', 'aardvark']\par
+lst2=['bbb', 'ccc', 'axx', 'xzz', 'xaa']\par
+\par
+print lst1," is sorted as \\n",customSort(lst1),"\\n\\n"\par
+print lst2," is sorted as \\n",customSort(lst2),"\\n\\n"\par
+\par
+#END\par
+\par
+#CODE4:\par
+\par
+def getLastEle(tup):\par
+\tab return tup[-1]\par
+\par
+def customSort(lst):\par
+\tab tmplst=lst\par
+\tab tmplst.sort(key=getLastEle)\par
+\tab return tmplst\par
+\par
+#main program\par
+\par
+lst1=[(1, 7), (1, 3), (3, 4, 5), (2, 2)]\par
+lst2=[(1, 3), (3, 2), (2, 1)]\par
+\par
+print lst1,"\\n is sorted as \\n",customSort(lst1)\par
+\par
+print "\\n\\n"\par
+\par
+print lst2,"\\n is sorted as \\n",customSort(lst2)\par
+\tab\par
+#END\par
+\par
+#CODE5:\par
+\par
+\par
+def lstWithNonSimilarAdjEle(lst):\par
+\tab index=0\par
+\tab next=index+1\par
+\tab tmplst=lst\par
+\tab l=len(tmplst)\par
+\tab finalLst=[]\par
+\tab maxI=len(tmplst)-1\par
+\par
+\tab for i,v in enumerate(tmplst):\par
+\tab\tab next=i+1\par
+\tab\tab if next>maxI:\par
+\tab\tab\tab finalLst.append(v)\par
+\tab\tab\tab break\par
+\par
+\tab\tab if v != tmplst[next]:\par
+\tab\tab\tab finalLst.append(v)\par
+\tab\tab\par
+\tab return finalLst\par
+\par
+lst=[2,3,4,3,3,3,2]\par
+lst1=[1, 2, 2, 3]\par
+lst2=[2, 2, 3, 3, 3]\par
+\par
+print lst,"-->",lstWithNonSimilarAdjEle(lst),"\\n\\n"\par
+print lst1,"-->",lstWithNonSimilarAdjEle(lst1),"\\n\\n"\par
+print lst2,"-->",lstWithNonSimilarAdjEle(lst2),"\\n\\n"\par
+\par
+#END\par
+\par
+\par
+#CODE6:\par
+\par
+bookstore = \{"New Arrivals":\{"COOKING":["Everyday Italian","Giada De Laurentiis","2005","30.00"],"CHILDREN":["Harry Potter","J K.Rowling","2005","29.99"],"WEB":["Learning XML","Erik T. Ray","2003","39.95"]\}\}\par
+print "\\n\\nBOOKSTORE\\n\\n"\par
+for dic1 in bookstore.values():\par
+\tab for lst in dic1.values():\par
+\tab\tab strn=str(lst)\par
+\tab\tab strn=strn[1:len(strn)-1]\tab\tab\par
+\tab\tab print strn\par
+\par
+print "\\n\\n"\par
+\par
+\par
+#END\par
+\par
+\par
+#CODE7:\par
+\par
+\par
+str1="""Python is a widely used high-level programming langauage for general-purpose prograaming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to concpets in fewer lines of code than possible languages such as C++ or Java. The language provides constructs inteneded to enable writing clear programs on both a small scale and a large scale. Python featues a dynamic type system and sutomatic memory management and supports multiple programming paradgms,including object-oriented, imperative, functional programming, and procedural styles. It has a large and comprehensive standard library. Python interpreters are available for many operating systems, allowing Python code to run on a wide variety of systems. CPython , the reference implementation of Python, is opne source software and has a community-based development model, as do nearly all of its variant implementations. CPython os managed by the non-profit Python Software Foundation."""\par
+\par
+\par
+wordCountTable=\{\}\par
+wordList=str1.split()\par
+for word in wordList:\par
+\tab wordCountTable[word]=str1.count(word)\par
+\par
+\par
+values=wordCountTable.values()\par
+values.sort()\par
+values.reverse()\par
+topFive=values[0:5]\par
+printCount=0\par
+\par
+\par
+print "\\n\\nTop Five words in the given string with their occurrences"\par
+print "\\n\\n---------------------------"\par
+print "word\\t\\tcount"\par
+print "---------------------------"\par
+for v in topFive:\par
+\tab for word in  wordCountTable:\par
+\tab\tab if wordCountTable[word] == v:\par
+\tab\tab\tab print word,"\\t\\t",wordCountTable[word]\par
+\tab\tab\tab printCount+=1\par
+\tab\tab\tab if printCount==5:\par
+\tab\tab\tab\tab break\par
+\tab if printCount==5:\par
+\tab\tab break\par
+print "\\n"\par
+\par
+\par
+#END\par
+\par
+\par
+\par
+#CODE8:\par
+\par
+\par
+str1="Python is a widely used high-level programming langauage for general-purpose prograaming, created by Guido van Rossum and first released in 1991. An interpreted language, Python has a design philosophy which emphasizes code readability (notably using whitespace indentation to delimit code blocks rather than curly braces or keywords), and a syntax which allows programmers to concpets in fewer lines of code than possible languages such as C++ or Java. The language provides constructs inteneded to enable writing clear programs on both a small scale and a large scale. Python featues a dynamic type system and sutomatic memory management and supports multiple programming paradgms,including object-oriented, imperative, functional programming, and procedural styles. It has a large and comprehensive standard library. Python interpreters are available for many operating systems, allowing Python code to run on a wide variety of systems. CPython , the reference implementation of Python, is opne source software and has a community-based development model, as do nearly all of its variant implementations. CPython os managed by the non-profit Python Software Foundation."\par
+\par
+str2="Python is Python are Python was Python not Python yes Python no Python awesome Python abcd"\par
+\par
+\par
+def getDic(strn):\par
+\tab dic=\{\}\par
+\tab wordList=strn.split()\par
+\tab length=len(wordList)\par
+\tab for index,word in enumerate(wordList):\par
+\tab\tab if dic.has_key(word):\par
+\tab\tab\tab continue\par
+\tab\tab tmpList=[]\par
+\tab\tab for i in range(index,length):\par
+\tab\tab\tab if index==length-1:\par
+\tab\tab\tab\tab break\par
+\tab\tab\tab if word==wordList[i]:\par
+\tab\tab\tab\tab nextWord=wordList[i+1]\par
+\tab\tab\tab\tab tmpList.append(nextWord)\par
+\tab\tab #print word,tmpList\par
+\par
+\tab\tab dic[word]=tmpList\par
+\tab return dic\par
+\par
+def predict(strn,word):\par
+\tab wordDictionary=getDic(strn)\par
+\tab print "in the given string, the word ' ",word,"' is likely followed by the list of words",wordDictionary[word]\par
+\par
+#the line below is to call the function \par
+\par
+predict(str1,"Python")\par
+\par
+#END\par
+\par
+\par
+\par
+#CODE9:\par
+\par
+\par
+import re\par
+\par
+\par
+str1="""Interface\tab\tab IP-Address\tab OK? \tab Method Status\tab Protocol\par
+ \par
+FastEthernet0/0\tab 192.168.1.242\tab YES \tab manual up\tab up \par
+FastEthernet1/0        unassigned\tab YES \tab unset\tab\tab down \par
+Serial2/0              \tab 192.168.1.250\tab YES \tab manual up\tab up \par
+Serial3/0              \tab 192.168.1.233\tab YES \tab manual up\tab up \par
+FastEthernet4/0        unassigned\tab YES \tab unset  \tab\tab down\tab\par
+FastEthernet5/0        unassigned\tab YES        unset \tab\tab down"""\par
+\par
+\par
+\par
+print "\\n"\par
+\par
+for line in str1.splitlines():\par
+\par
+\tab matchObj = re.match( r'(\\w+\\d\\/\\d)\\s+[.0-9a-z]+\\s+\\w+\\s+(\\w+\\s?\\w+?)\\s+\\w+', line, re.M|re.I)\par
+\par
+\tab if matchObj:\par
+\tab    print  matchObj.group(1),",",matchObj.group(2),"\\n"\par
+print "\\n"\par
+\par
+#END\par
+\par
+\par
+\par
+\par
+\par
+\par
+}
+ 
